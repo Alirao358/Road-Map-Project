@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finance Tracker</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class=" font-sans bg-gradient-to-br to-[#021623] from-[#154543]">
+  <div class="container  p-4 md:p-6 my-8 bg-gradient-to-br to-[#021623] from-[#154543]">
+    <div class=" rounded-xl shadow-md p-6">
+      <!-- Header -->
+      <div class="text-center mb-8">
+        <h1 class="text-3xl font-serif font-extralight text-[#FFFFFF]">Add Transaction</h1>
+        <p class="text-[#E5FF5E]">Track your income and expenses easily</p>
+      </div>
+
+      <!-- Balance Section -->
+       <div class="flex justify-center items-center space-x-5 "> 
+      <div class="bg-gradient-to-tl to-[#154142] from-[#152C38] text-white p-6 rounded-lg mb-8 text-center w-96">
+        <p class="text-lg  font-serif font-extralight">Current Balance</p>
+        <h2 id="balance" class="text-4xl font-bold my-2">₨0.00</h2>
+      </div>
+      <div class="bg-gradient-to-tl to-[#154142] from-[#152C38] text-white p-6 rounded-lg mb-8 text-center w-96">
+        <p class="text-lg  font-serif font-extralight">Expenses</p>
+        <h2 id="balance" class="text-4xl font-bold my-2">₨0.00</h2>
+      </div>
+      <div class="bg-gradient-to-tl to-[#154142] from-[#152C38] text-white p-6 rounded-lg mb-8 text-center w-96">
+        <p class="text-lg  font-serif font-extralight">Freelance</p>
+        <h2 id="balance" class="text-4xl font-bold my-2">₨0.00</h2>
+      </div>
+      <div class="bg-gradient-to-tl to-[#154142] from-[#152C38] text-white p-6 rounded-lg mb-8 text-center w-96">
+        <p class="text-lg  font-serif font-extralight">Investment</p>
+        <h2 id="balance" class="text-4xl font-bold my-2">₨0.00</h2>
+      </div>
+    </div>
+
+      <!-- Transaction Forms -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <!-- Income Section -->
+        <div class="bg-[#DDE9E9] p-6 rounded-lg shadow">
+          <h3 class="text-xl font-serif text-green-600 mb-3">Income</h3>
+          <p class="mb-4">Total Income: <span id="income-total" class="font-semibold">₨0.00</span></p>
+          
+          <div class="space-y-4">
+            <div>
+              <label for="income-description" class="block text-lg font-medium text-gray-700 mb-1">Description</label>
+              <input type="text" id="income-description" placeholder="Description" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            
+            <div>
+              <label for="income-amount" class="block text-lg font-medium text-gray-700 mb-1">Amount (PKR)</label>
+              <input type="number" id="income-amount" placeholder="Amount" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            
+            <div>
+              <label for="income-date" class="block text-lg font-medium text-gray-700 mb-1">Date</label>
+              <input type="date" id="income-date" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            
+            <div>
+              <label for="income-category" class="block text-lg font-medium text-gray-700 mb-1">Category</label>
+              <select id="income-category" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="salary">Salary</option>
+                <option value="freelance">Freelance</option>
+                <option value="investment">Investment</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <button id="add-income" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition duration-200">Add Income</button>
+          </div>
+        </div>
+
+        <!-- Expense Section -->
+        <div class="bg-[#365F63] p-6 rounded-lg shadow">
+          <h3 class="text-xl font-serif text-red-600 mb-3">Expense</h3>
+          <p class="mb-4">Total Expenses: <span id="expense-total" class="font-semibold">₨0.00</span></p>
+          
+          <div class="space-y-4">
+            <div>
+              <label for="expense-description" class="block text-lg font-medium text-gray-700 mb-1">Description</label>
+              <input type="text" id="expense-description" placeholder="Description" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            
+            <div>
+              <label for="expense-amount" class="block text-lg font-medium text-gray-700 mb-1">Amount (PKR)</label>
+              <input type="number" id="expense-amount" placeholder="Amount" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            
+            <div>
+              <label for="expense-date" class="block text-lg font-medium text-gray-700 mb-1">Date</label>
+              <input type="date" id="expense-date" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            
+            <div>
+              <label for="expense-category" class="block text-lg font-medium text-gray-700 mb-1">Category</label>
+              <select id="expense-category" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="food">Food</option>
+                <option value="transportation">Transportation</option>
+                <option value="housing">Housing</option>
+                <option value="utilities">Utilities</option>
+                <option value="healthcare">Healthcare</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <button id="add-expense" class="w-full bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded transition duration-200">Add Expense</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transaction History -->
+      <div class="mt-8">
+        <h3 class="text-xl font-semibold text-gray-800 pb-2 border-b-2 border-blue-500 mb-4">Transaction History</h3>
+        <ul id="transaction-list" class="divide-y divide-gray-200"></ul>
+      </div>
+
+      <!-- Footer -->
+      <div class="mt-8 text-center text-gray-500 text-sm">
+        <p>Finance Tracker © 2025. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Initialize the transactions array from localStorage or create an empty array
+    let transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+    
+    // DOM Elements
+    const balanceEl = document.getElementById('balance');
+    const incomeEl = document.getElementById('income-total');
+    const expenseEl = document.getElementById('expense-total');
+    const incomeDescEl = document.getElementById('income-description');
+    const incomeAmountEl = document.getElementById('income-amount');
+    const incomeDateEl = document.getElementById('income-date');
+    const incomeCategoryEl = document.getElementById('income-category');
+    const expenseDescEl = document.getElementById('expense-description');
+    const expenseAmountEl = document.getElementById('expense-amount');
+    const expenseDateEl = document.getElementById('expense-date');
+    const expenseCategoryEl = document.getElementById('expense-category');
+    const addIncomeBtn = document.getElementById('add-income');
+    const addExpenseBtn = document.getElementById('add-expense');
+    const transactionListEl = document.getElementById('transaction-list');
+    
+    // Set today's date as default for date inputs
+    const today = new Date().toISOString().split('T')[0];
+    incomeDateEl.value = today;
+    expenseDateEl.value = today;
+    
+    // Function to update the balances
+    function updateBalance() {
+      const incomeTotal = transactions
+        .filter(transaction => transaction.type === 'income')
+        .reduce((total, transaction) => total + parseFloat(transaction.amount), 0);
+      
+      const expenseTotal = transactions
+        .filter(transaction => transaction.type === 'expense')
+        .reduce((total, transaction) => total + parseFloat(transaction.amount), 0);
+      
+      const balance = incomeTotal - expenseTotal;
+      
+      // Format balance to avoid showing -₨0.00
+      if (balance === 0 || Math.abs(balance) < 0.01) {
+        balanceEl.textContent = "₨0.00";
+      } else {
+        // Show with proper sign for non-zero values
+        balanceEl.textContent = balance < 0 
+          ? `-₨${Math.abs(balance).toFixed(2)}`
+          : `₨${balance.toFixed(2)}`;
+      }
+      
+      incomeEl.textContent = `₨${incomeTotal.toFixed(2)}`;
+      expenseEl.textContent = `₨${expenseTotal.toFixed(2)}`;
+    }
+    
+    // Function to add a transaction
+    function addTransaction(type) {
+      const date = type === 'income' ? incomeDateEl.value : expenseDateEl.value;
+      const description = type === 'income' ? incomeDescEl.value : expenseDescEl.value;
+      const amount = type === 'income' ? incomeAmountEl.value : expenseAmountEl.value;
+      const category = type === 'income' ? incomeCategoryEl.value : expenseCategoryEl.value;
+      
+      if (!description || !amount || amount <= 0) {
+        alert('Please enter a valid description and amount');
+        return;
+      }
+      
+      const transaction = {
+        id: generateID(),
+        date,
+        description,
+        amount: parseFloat(amount),
+        category,
+        type
+      };
+      
+      transactions.push(transaction);
+      
+      updateLocalStorage();
+      updateBalance();
+      displayTransactions();
+      
+      // Clear form fields
+      if (type === 'income') {
+        incomeDescEl.value = '';
+        incomeAmountEl.value = '';
+      } else {
+        expenseDescEl.value = '';
+        expenseAmountEl.value = '';
+      }
+    }
+    
+    // Function to generate a random ID
+    function generateID() {
+      return Math.floor(Math.random() * 1000000000);
+    }
+    
+    // Function to update localStorage
+    function updateLocalStorage() {
+      localStorage.setItem('transactions', JSON.stringify(transactions));
+    }
+    
+    // Function to display transactions
+    function displayTransactions() {
+      transactionListEl.innerHTML = '';
+      
+      // Sort transactions by date (newest first)
+      transactions.sort((a, b) => new Date(b.date) - new Date(a.date));
+      
+      if (transactions.length === 0) {
+        transactionListEl.innerHTML = '<li class="py-4 text-center text-gray-500">No transactions yet</li>';
+        return;
+      }
+      
+      transactions.forEach(transaction => {
+        const listItem = document.createElement('li');
+        listItem.className = 'py-4 flex items-center justify-between hover:bg-gray-50';
+        
+        const isIncome = transaction.type === 'income';
+        const amountClass = isIncome ? 'text-green-600' : 'text-red-600';
+        const sign = isIncome ? '+' : '-';
+        
+        listItem.innerHTML = `
+          <div>
+            <p class="font-medium text-gray-800">${transaction.description}</p>
+            <div class="flex space-x-2 text-sm text-gray-500">
+              <span>${formatDate(transaction.date)}</span>
+              <span>•</span>
+              <span>${transaction.category}</span>
+            </div>
+          </div>
+          <div class="flex items-center space-x-3">
+            <span class="font-medium ${amountClass}">${sign}₨${parseFloat(transaction.amount).toFixed(2)}</span>
+            <button 
+              onclick="deleteTransaction(${transaction.id})" 
+              class="text-xs bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded transition duration-200">
+              Delete
+            </button>
+          </div>
+        `;
+        
+        transactionListEl.appendChild(listItem);
+      });
+    }
+    
+    // Function to format date
+    function formatDate(dateString) {
+      const options = { year: 'numeric', month: 'short', day: 'numeric' };
+      const date = new Date(dateString);
+      return date.toLocaleDateString('en-IN', options);
+    }
+    
+    // Function to delete a transaction
+    function deleteTransaction(id) {
+      transactions = transactions.filter(transaction => transaction.id !== id);
+      
+      updateLocalStorage();
+      updateBalance();
+      displayTransactions();
+    }
+    
+    // Event Listeners
+    addIncomeBtn.addEventListener('click', () => addTransaction('income'));
+    addExpenseBtn.addEventListener('click', () => addTransaction('expense'));
+    
+    // Initial load
+    updateBalance();
+    displayTransactions();
+
+    // Make deleteTransaction available globally
+    window.deleteTransaction = deleteTransaction;
+  </script>
+</body>
+</html>
