@@ -6,13 +6,158 @@
   <title>Finance Tracker</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class=" font-sans bg-gradient-to-br to-[#021623] from-[#154543]">
-  <div class="container  p-4 md:p-6 my-8 bg-gradient-to-br to-[#021623] from-[#154543]">
+<body class=" font-sans">
+  <nav
+      class="bg-white shadow-lg"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+          <div class="flex items-center">
+            <a href="#" class="flex items-center">
+              <span
+                class="ml-2 text-xl font-bold font-serif text-opacity-80 transition duration-300 transform hover:scale-105"
+                >Fiance Tracker</span
+              >
+            </a>
+          </div>
+          <div class="hidden md:flex md:items-center md:space-x-4 font-serif">
+            <a
+              href="#Dashboard"
+              class="text-black font-bold hover:bg-black hover:text-white px-3 py-2 rounded-md text-sm transition duration-300 transform hover:scale-105"
+            >
+              Dashboard
+            </a>
+            <a
+              href="#ABOUT US
+              "
+              class="text-black font-bold hover:bg-black hover:text-white px-3 py-2 rounded-md text-sm transition duration-300 transform hover:scale-105"
+            >
+              ABOUT US
+            </a>
+            <a
+              href="#OUR SERVICES
+              "
+              class="text-black font-bold hover:bg-black hover:text-white px-3 py-2 rounded-md text-sm transition duration-300 transform hover:scale-105"
+            >
+              OUR SERVICES
+            </a>
+            <a
+            href="#Contact
+            "
+            class="text-black font-bold hover:bg-black hover:text-white px-3 py-2 rounded-md text-sm transition duration-300 transform hover:scale-105"
+          >
+            Contact
+          </a>
+          </div>
+          <div class="hidden md:flex md:items-center md:space-x-4">
+            <button>
+              <a
+                href="Add transaction.html"
+                class="text-black font-bold hover:bg-black hover:text-white px-3 py-2 rounded-md text-sm transition duration-300 transform hover:scale-105"
+              >
+                ADD TRANSACTION</a
+              >
+            </button>
+            <button>
+              <a
+                href=""
+                class="text-black font-bold hover:bg-black hover:text-white px-3 py-2 rounded-md text-sm transition duration-300 transform hover:scale-105"
+                >SIGN UP</a
+              >
+            </button>
+          </div>
+
+          <div class="md:hidden flex items-center">
+            <button
+              onclick="toggleMenu()"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-green-600 hover:bg-green-50 focus:outline-none"
+            >
+              <svg
+                id="menu-icon"
+                class="h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+              <svg
+                id="close-icon"
+                class="h-6 w-6 hidden"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+          <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a
+              href="#"
+              class="text-gray-600 hover:bg-green-50 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium"
+            >
+              Dashboard
+            </a>
+            <a
+              href="#"
+              class="text-gray-600 hover:bg-green-50 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium"
+            >
+              About Us
+            </a>
+            <a
+              href="#"
+              class="text-gray-600 hover:bg-green-50 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium"
+            >
+              OUR SERVICES
+            </a>
+            <a
+              href="#"
+              class="text-gray-600 hover:bg-green-50 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium"
+            >
+              Contact
+            </a>
+          </div>
+          <div class="hidden md:flex md:items-center md:space-x-4">
+            <button>
+              <a
+                href=""
+                class="text-black font-bold hover:bg-black hover:text-white px-3 py-2 rounded-md text-sm transition duration-300 transform hover:scale-105"
+              >
+                ADD TRANSACTION</a
+              >
+            </button>
+            <button>
+              <a
+                href=""
+                class="text-black font-bold hover:bg-black hover:text-white px-3 py-2 rounded-md text-sm transition duration-300 transform hover:scale-105"
+                >SIGN UP</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  <div class="container  p-4 md:p-6 my-8">
     <div class=" rounded-xl shadow-md p-6">
       <!-- Header -->
       <div class="text-center mb-8">
-        <h1 class="text-3xl font-serif font-extralight text-[#FFFFFF]">Add Transaction</h1>
-        <p class="text-[#E5FF5E]">Track your income and expenses easily</p>
+        <h1 class="text-3xl font-serif font-extralight text-black">Add Transaction</h1>
+        <p class="text-black">Track your income and expenses easily</p>
       </div>
 
       <!-- Balance Section -->
@@ -23,14 +168,6 @@
       </div>
       <div class="bg-gradient-to-tl to-[#154142] from-[#152C38] text-white p-6 rounded-lg mb-8 text-center w-96">
         <p class="text-lg  font-serif font-extralight">Expenses</p>
-        <h2 id="balance" class="text-4xl font-bold my-2">₨0.00</h2>
-      </div>
-      <div class="bg-gradient-to-tl to-[#154142] from-[#152C38] text-white p-6 rounded-lg mb-8 text-center w-96">
-        <p class="text-lg  font-serif font-extralight">Freelance</p>
-        <h2 id="balance" class="text-4xl font-bold my-2">₨0.00</h2>
-      </div>
-      <div class="bg-gradient-to-tl to-[#154142] from-[#152C38] text-white p-6 rounded-lg mb-8 text-center w-96">
-        <p class="text-lg  font-serif font-extralight">Investment</p>
         <h2 id="balance" class="text-4xl font-bold my-2">₨0.00</h2>
       </div>
     </div>
